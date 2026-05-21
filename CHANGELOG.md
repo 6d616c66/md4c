@@ -6,6 +6,17 @@
 
 New Features:
 
+  * Add GFM-like footnote extension, enabled with the flag `MD_FLAG_FOOTNOTES`.
+
+    Syntax example:
+    ```
+    Here is a simple footnote[^1]. With some additional text after it.
+
+    [^1]: My reference.
+    ```
+
+    Contributed by [Gregory Moskaliuk](https://github.com/hryhoriiK97).
+
   * Add extension recognizing GFM-like admonitions, as e.g.
 
     ```
@@ -52,9 +63,10 @@ Fixes:
     not appear in the valid UTF-8 input, with the replacement character U+FFFD
     (as it was already doing for invalid codepoints above U+10FFFF).
 
-  * [#328](https://github.com/mity/md4c/issues/328):
-    Fix HTML block recognition in Windows Unicode builds of the parser
-    (i.e. when built with `-DMD4C_USE_UTF16`).
+  * [#328](https://github.com/mity/md4c/issues/328),
+    [#338](https://github.com/mity/md4c/issues/338):
+    Fix several bugs of Windows Unicode builds of the parser (i.e. when built
+    with `-DMD4C_USE_UTF16`).
 
   * [#330](https://github.com/mity/md4c/pull/330):
     The `md2html` utility collects the generated HTML into an in-memory growing
